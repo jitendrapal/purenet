@@ -28,7 +28,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-[#BA5C1E]/20 bg-white/95 backdrop-blur-md shadow-sm">
-      <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-3.5">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3.5">
         {/* Brand */}
         <Link to="/" className="flex items-center gap-2" onClick={closeMobile}>
           <img
@@ -46,8 +46,8 @@ export function Header() {
           </div>
         </Link>
 
-        {/* Desktop nav */}
-        <nav className="hidden items-center gap-2 md:flex flex-1">
+        {/* Desktop nav - Centered */}
+        <nav className="hidden items-center gap-2 md:flex absolute left-1/2 transform -translate-x-1/2">
           <NavLink to="/" className={navClass}>
             Home
           </NavLink>
@@ -64,7 +64,7 @@ export function Header() {
         </nav>
 
         {/* Right section */}
-        <div className="flex items-center gap-3 ml-auto">
+        <div className="flex items-center gap-3">
           {/* Cart */}
           <NavLink
             to="/cart"
