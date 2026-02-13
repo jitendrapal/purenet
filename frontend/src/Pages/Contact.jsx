@@ -209,17 +209,22 @@ export default function Contact() {
                 <p>
                   📧 Email:{" "}
                   <a
-                    href="mailto:rockw964@gmail.com"
+                    href="mailto:info@thepurenut.nl"
                     className="font-medium text-emerald-700 hover:text-emerald-800"
                   >
-                    rockw964@gmail.com
+                    info@thepurenut.nl
                   </a>
                 </p>
                 <p>
                   📱 Phone / WhatsApp:{" "}
-                  <span className="text-slate-800">+91-8421-50-1905</span>
+                  <a
+                    href="tel:+31633006871"
+                    className="font-medium text-emerald-700 hover:text-emerald-800"
+                  >
+                    +31 63 300 6871
+                  </a>
                 </p>
-                <p>📍 Pune, Maharashtra</p>
+                <p>📍 129 Jane Addamslaan, 1187DA, Amstelveen</p>
               </div>
               <p className="mt-3 text-[11px] text-slate-500">
                 Prefer a quick call? Reach out directly and we&apos;ll walk you

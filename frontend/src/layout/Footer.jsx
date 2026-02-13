@@ -121,7 +121,7 @@ export function Footer() {
                   📍
                 </span>
                 <span className="text-sm text-slate-600 font-medium">
-                  Amstelveen, Netherlands
+                  129 Jane Addamslaan, 1187DA, Amstelveen
                 </span>
               </li>
               <li className="flex items-start gap-3">
@@ -129,10 +129,10 @@ export function Footer() {
                   📱
                 </span>
                 <a
-                  href="tel:+31683078160"
+                  href="tel:+31633006871"
                   className="text-sm text-slate-600 hover:text-[#BA5C1E] transition-colors font-medium"
                 >
-                  +31 68 307 8160
+                  +31 63 300 6871
                 </a>
               </li>
               <li className="flex items-start gap-3">
