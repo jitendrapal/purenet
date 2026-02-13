@@ -11,7 +11,7 @@ export function FoodHero() {
 
   // Video sources array - add your videos here
   const videos = [
-    { mp4: "/mainscreen.mp4" }, // Your new video from public folder
+    { mp4: "/min.mp4" }, // New min.mp4 video from public folder
   ];
 
   const currentVideo = videos[currentVideoIndex];
