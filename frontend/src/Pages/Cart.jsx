@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { useStore } from "../context/StoreContext";
 import { CartItem } from "../components/CartItem";
 import { Input } from "../components/ui/Input";
-import { Button } from "../components/ui/Button";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { WhatsApp } from "@mui/icons-material";
 import { WhatsAppOrderModal } from "../components/WhatsAppOrderModal";
@@ -244,13 +243,13 @@ export default function Cart() {
             </span>
           </div>
 
-          <Button
+          <button
             type="submit"
             disabled={!cart.length || status === "sending"}
-            className="mt-4 w-full bg-emerald-600 text-white"
+            className="mt-4 w-full rounded-full bg-[#BA5C1E] px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:bg-[#BA5C1E] hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-50"
           >
             {status === "sending" ? "Placing order..." : "Place order request"}
-          </Button>
+          </button>
 
           {/* WhatsApp Order Button */}
           <div className="mt-3 text-center">

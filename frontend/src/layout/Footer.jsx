@@ -6,6 +6,11 @@ import logo from "../assets/Logo.webp";
 export function Footer() {
   const year = new Date().getFullYear();
 
+  // Scroll to top immediately when clicking quick links
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  };
+
   return (
     <footer className="relative mt-20 overflow-hidden bg-gradient-to-b from-white to-amber-50/30">
       {/* Decorative top border */}
@@ -66,6 +71,7 @@ export function Footer() {
               <li>
                 <Link
                   to="/"
+                  onClick={scrollToTop}
                   className="group inline-flex items-center text-slate-600 hover:text-[#BA5C1E] transition-colors"
                 >
                   <span className="mr-2 text-[#BA5C1E] opacity-0 group-hover:opacity-100 transition-opacity">
@@ -77,6 +83,7 @@ export function Footer() {
               <li>
                 <Link
                   to="/products"
+                  onClick={scrollToTop}
                   className="group inline-flex items-center text-slate-600 hover:text-[#BA5C1E] transition-colors"
                 >
                   <span className="mr-2 text-[#BA5C1E] opacity-0 group-hover:opacity-100 transition-opacity">
@@ -88,6 +95,7 @@ export function Footer() {
               <li>
                 <Link
                   to="/about"
+                  onClick={scrollToTop}
                   className="group inline-flex items-center text-slate-600 hover:text-[#BA5C1E] transition-colors"
                 >
                   <span className="mr-2 text-[#BA5C1E] opacity-0 group-hover:opacity-100 transition-opacity">
@@ -99,6 +107,7 @@ export function Footer() {
               <li>
                 <Link
                   to="/contact"
+                  onClick={scrollToTop}
                   className="group inline-flex items-center text-slate-600 hover:text-[#BA5C1E] transition-colors"
                 >
                   <span className="mr-2 text-[#BA5C1E] opacity-0 group-hover:opacity-100 transition-opacity">
