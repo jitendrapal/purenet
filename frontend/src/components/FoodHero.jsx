@@ -11,7 +11,7 @@ export function FoodHero() {
 
   // Video sources array - add your videos here
   const videos = [
-    { mp4: "/min.mp4" }, // New min.mp4 video from public folder
+    { mp4: "/mainfinal.mp4" }, // Final video from public folder
   ];
 
   const currentVideo = videos[currentVideoIndex];
@@ -64,18 +64,18 @@ export function FoodHero() {
   };
 
   return (
-    <section className="relative flex h-[70vh] w-full items-stretch justify-center overflow-hidden bg-black sm:h-[80vh] lg:h-[90vh]">
+    <section className="relative flex h-[50vh] w-full items-stretch justify-center overflow-hidden bg-black sm:h-[55vh] lg:h-[60vh]">
       {/* Loading placeholder */}
       {!isVideoLoaded && (
         <div className="absolute inset-0 bg-gradient-to-br from-amber-900 via-amber-800 to-black animate-pulse" />
       )}
 
-      {/* Background video sized to hero with professional quality settings */}
+      {/* Background video with optimized quality settings */}
       <video
         key={currentVideoIndex}
         ref={videoRef}
         src={currentVideo.mp4}
-        className={`absolute inset-0 h-full w-full object-cover scale-105 animate-subtle-zoom transition-opacity duration-1000 ${
+        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
           isVideoLoaded ? "opacity-100" : "opacity-0"
         }`}
         autoPlay
@@ -86,16 +86,18 @@ export function FoodHero() {
         disablePictureInPicture
         disableRemotePlayback
         style={{
-          filter: "contrast(1.1) saturate(1.15) brightness(1.15)",
-          imageRendering: "high-quality",
+          imageRendering: "-webkit-optimize-contrast",
+          WebkitBackfaceVisibility: "hidden",
+          WebkitPerspective: 1000,
+          WebkitTransform: "translate3d(0, 0, 0)",
+          transform: "translate3d(0, 0, 0)",
         }}
       >
         Your browser does not support the video tag.
       </video>
 
-      {/* Lighter gradient overlay for brighter appearance */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/40" />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-radial from-transparent via-transparent to-black/20" />
+      {/* Minimal overlay for better video visibility */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/30" />
 
       {/* Content with fade-in animation - Left aligned */}
       <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-start px-4 sm:px-6 lg:px-8 pb-12 pt-24 sm:pt-32 lg:pt-40 text-left animate-fade-in">
