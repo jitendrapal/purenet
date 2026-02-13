@@ -64,7 +64,7 @@ export function FoodHero() {
   };
 
   return (
-    <section className="relative flex h-[40vh] w-full items-stretch justify-center overflow-hidden bg-black sm:h-[45vh] lg:h-[50vh]">
+    <section className="relative flex h-[30vh] w-full items-stretch justify-center overflow-hidden bg-black sm:h-[45vh] lg:h-[50vh]">
       {/* Loading placeholder */}
       {!isVideoLoaded && (
         <div className="absolute inset-0 bg-gradient-to-br from-amber-900 via-amber-800 to-black animate-pulse" />
@@ -75,7 +75,7 @@ export function FoodHero() {
         key={currentVideoIndex}
         ref={videoRef}
         src={currentVideo.mp4}
-        className="absolute top-1/2 left-1/2 transition-opacity duration-1000 scale-[2.2] sm:scale-110 lg:scale-110"
+        className="absolute top-1/2 left-1/2 transition-opacity duration-1000 scale-[1.6] sm:scale-110 lg:scale-110"
         autoPlay
         loop
         muted
