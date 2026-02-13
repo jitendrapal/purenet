@@ -86,6 +86,10 @@ export function FoodHero() {
         disablePictureInPicture
         disableRemotePlayback
         style={{
+          objectFit: "cover",
+          objectPosition: "center",
+          minWidth: "100%",
+          minHeight: "100%",
           imageRendering: "-webkit-optimize-contrast",
           WebkitBackfaceVisibility: "hidden",
           WebkitPerspective: 1000,
