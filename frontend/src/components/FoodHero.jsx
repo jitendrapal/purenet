@@ -19,7 +19,7 @@ export function FoodHero() {
   useEffect(() => {
     // Ensure smooth playback on mount
     if (videoRef.current) {
-      videoRef.current.playbackRate = 1.0;
+      videoRef.current.playbackRate = 0.75; // Slow down video to 75% speed
 
       // Handle video loaded
       const handleLoadedData = () => {
@@ -64,7 +64,7 @@ export function FoodHero() {
   };
 
   return (
-    <section className="relative flex h-[40vh] w-full items-stretch justify-center overflow-hidden bg-black sm:h-[45vh] lg:h-[50vh]">
+    <section className="relative flex h-[40vh] w-full items-stretch justify-center overflow-hidden bg-black sm:h-[50vh] lg:h-[75vh]">
       {/* Loading placeholder */}
       {!isVideoLoaded && (
         <div className="absolute inset-0 bg-gradient-to-br from-amber-900 via-amber-800 to-black animate-pulse" />
@@ -75,7 +75,7 @@ export function FoodHero() {
         key={currentVideoIndex}
         ref={videoRef}
         src={currentVideo.mp4}
-        className="absolute top-1/2 left-1/2 transition-opacity duration-1000"
+        className="absolute top-1/2 left-1/2 transition-opacity duration-1000 scale-110 lg:scale-100"
         autoPlay
         loop
         muted
@@ -88,8 +88,8 @@ export function FoodHero() {
           width: "100%",
           height: "auto",
           minHeight: "100%",
-          transform: "translate(-50%, -50%) scale(1.5)",
-          WebkitTransform: "translate(-50%, -50%) scale(1.5)",
+          transform: "translate(-50%, -50%)",
+          WebkitTransform: "translate(-50%, -50%)",
           objectFit: "cover",
           imageRendering: "-webkit-optimize-contrast",
           WebkitBackfaceVisibility: "hidden",
@@ -102,32 +102,32 @@ export function FoodHero() {
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/30" />
 
       {/* Content with fade-in animation - Left aligned */}
-      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-start px-4 sm:px-6 lg:px-8 pb-12 pt-24 sm:pt-32 lg:pt-40 text-left animate-fade-in">
-        <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-amber-300 drop-shadow-lg">
+      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-start justify-center h-full px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12 text-left animate-fade-in">
+        <p className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.25em] text-amber-300 drop-shadow-lg">
           Luxury in a Jar
         </p>
 
-        <h1 className="mt-2 text-4xl font-bold text-white sm:text-5xl lg:text-6xl drop-shadow-2xl">
+        <h1 className="mt-1 sm:mt-2 text-3xl sm:text-4xl font-bold text-white lg:text-6xl drop-shadow-2xl">
           PureNut
         </h1>
 
-        <p className="mt-3 text-lg font-semibold text-white sm:text-xl drop-shadow-lg">
+        <p className="mt-2 sm:mt-3 text-base sm:text-lg font-semibold text-white lg:text-xl drop-shadow-lg">
           Butters, crafted fresh.
         </p>
 
-        <p className="mt-4 max-w-xl text-sm text-white/95 sm:text-base drop-shadow-md leading-relaxed font-medium">
+        <p className="mt-2 sm:mt-4 max-w-xl text-xs sm:text-sm text-white/95 lg:text-base drop-shadow-md leading-relaxed font-medium">
           Creamy, crunchy and chocolatey peanut butters made from premium nuts —
           perfect for toast, smoothies and desserts.
         </p>
 
-        <div className="mt-8 flex flex-wrap items-center gap-4">
+        <div className="mt-4 sm:mt-8 flex flex-wrap items-center gap-4">
           <Button
             onClick={() => navigate("/products")}
-            className="group inline-flex items-center gap-2 bg-gradient-to-r from-[#BA5C1E] to-[#D97236] text-sm font-semibold text-white px-8 py-3.5 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:from-[#D97236] hover:to-[#BA5C1E]"
+            className="group inline-flex items-center gap-2 bg-gradient-to-r from-[#BA5C1E] to-[#D97236] text-xs sm:text-sm font-semibold text-white px-6 sm:px-8 py-2.5 sm:py-3.5 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:from-[#D97236] hover:to-[#BA5C1E]"
           >
             Explore Products
             <svg
-              className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+              className="h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-300 group-hover:translate-x-1"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -143,15 +143,15 @@ export function FoodHero() {
         </div>
 
         {/* Video slider navigation dots */}
-        <div className="mt-10 flex items-center justify-center gap-3">
+        <div className="mt-4 sm:mt-10 flex items-center justify-center gap-3">
           {videos.map((_, index) => (
             <button
               key={index}
               onClick={() => goToVideo(index)}
-              className={`h-3 rounded-full transition-all duration-300 ${
+              className={`h-2 sm:h-3 rounded-full transition-all duration-300 ${
                 index === currentVideoIndex
-                  ? "w-10 bg-amber-400 shadow-xl shadow-amber-400/70"
-                  : "w-3 bg-white/70 hover:bg-white shadow-md"
+                  ? "w-8 sm:w-10 bg-amber-400 shadow-xl shadow-amber-400/70"
+                  : "w-2 sm:w-3 bg-white/70 hover:bg-white shadow-md"
               }`}
               aria-label={`Go to video ${index + 1}`}
             />
