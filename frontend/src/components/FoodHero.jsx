@@ -9,7 +9,7 @@ export function FoodHero() {
 
   // Video sources array - add your videos here
   const videos = [
-    { mp4: "/NE-ECW/mainscreen.mp4" }, // Your new video from public folder (with base path)
+    { mp4: "/mainscreen.mp4" }, // Your new video from public folder
   ];
 
   const currentVideo = videos[currentVideoIndex];
