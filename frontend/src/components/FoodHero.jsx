@@ -75,7 +75,7 @@ export function FoodHero() {
         key={currentVideoIndex}
         ref={videoRef}
         src={currentVideo.mp4}
-        className="absolute transition-opacity duration-1000 scale-[1.9] sm:scale-110 lg:scale-110"
+        className="absolute transition-opacity duration-1000 scale-[2.5] sm:scale-110 lg:scale-110"
         autoPlay
         loop
         muted
