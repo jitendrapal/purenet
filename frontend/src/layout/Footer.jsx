@@ -1,6 +1,7 @@
 // src/layout/Footer.jsx
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "../assets/Logo.webp";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -15,10 +16,12 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand Section */}
           <div className="lg:col-span-2">
-            <div className="inline-flex items-center gap-2">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#BA5C1E] to-[#D97236] shadow-lg">
-                <span className="text-2xl">🥜</span>
-              </div>
+            <Link to="/" className="inline-flex items-center gap-3 group">
+              <img
+                src={logo}
+                alt="PureNut Logo"
+                className="h-16 w-16 rounded-xl object-contain shadow-lg transition-transform duration-300 group-hover:scale-105"
+              />
               <div>
                 <p className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#BA5C1E] to-[#D97236]">
                   PureNut
@@ -27,7 +30,7 @@ export function Footer() {
                   Luxury in a Jar
                 </p>
               </div>
-            </div>
+            </Link>
             <p className="mt-6 max-w-md text-base leading-relaxed text-slate-600">
               Crafting premium nut butters from the finest ingredients
               worldwide. Every jar is a testament to our commitment to purity,

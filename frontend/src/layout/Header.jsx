@@ -113,18 +113,34 @@ export function Header() {
       {mobileOpen && (
         <div className="border-t border-[#BA5C1E]/20 bg-white/95 md:hidden">
           <nav className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-3 text-sm">
-            {["/", "/products", "/services", "/about", "/contact"].map(
-              (path, i) => (
-                <NavLink
-                  key={i}
-                  to={path}
-                  onClick={closeMobile}
-                  className="rounded-lg px-3 py-2 text-slate-700 hover:bg-[#BA5C1E]/10"
-                >
-                  {["Home", "Products", "About", "Contact"][i]}
-                </NavLink>
-              ),
-            )}
+            <NavLink
+              to="/"
+              onClick={closeMobile}
+              className="rounded-lg px-3 py-2 text-slate-700 hover:bg-[#BA5C1E]/10"
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/products"
+              onClick={closeMobile}
+              className="rounded-lg px-3 py-2 text-slate-700 hover:bg-[#BA5C1E]/10"
+            >
+              Products
+            </NavLink>
+            <NavLink
+              to="/about"
+              onClick={closeMobile}
+              className="rounded-lg px-3 py-2 text-slate-700 hover:bg-[#BA5C1E]/10"
+            >
+              About
+            </NavLink>
+            <NavLink
+              to="/contact"
+              onClick={closeMobile}
+              className="rounded-lg px-3 py-2 text-slate-700 hover:bg-[#BA5C1E]/10"
+            >
+              Contact
+            </NavLink>
           </nav>
         </div>
       )}
