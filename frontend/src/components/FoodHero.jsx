@@ -105,7 +105,7 @@ export function FoodHero() {
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/30" />
 
       {/* Bottom edge overlay to hide "veo" trademark - Mobile only */}
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/80 via-black/40 to-transparent sm:hidden" />
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black via-black/70 to-transparent sm:hidden" />
 
       {/* Content with fade-in animation - Left aligned */}
       <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-start justify-center h-full px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12 text-left animate-fade-in">
