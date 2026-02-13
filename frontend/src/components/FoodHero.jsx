@@ -75,7 +75,7 @@ export function FoodHero() {
         key={currentVideoIndex}
         ref={videoRef}
         src={currentVideo.mp4}
-        className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto transition-opacity duration-1000"
+        className="absolute top-1/2 left-1/2 transition-opacity duration-1000"
         autoPlay
         loop
         muted
@@ -85,8 +85,11 @@ export function FoodHero() {
         disableRemotePlayback
         style={{
           opacity: isVideoLoaded ? 1 : 0,
-          transform: "translate(-50%, -50%) scale(1.1)",
-          WebkitTransform: "translate(-50%, -50%) scale(1.1)",
+          width: "100%",
+          height: "auto",
+          minHeight: "100%",
+          transform: "translate(-50%, -50%) scale(1.5)",
+          WebkitTransform: "translate(-50%, -50%) scale(1.5)",
           objectFit: "cover",
           imageRendering: "-webkit-optimize-contrast",
           WebkitBackfaceVisibility: "hidden",
