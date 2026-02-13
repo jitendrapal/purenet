@@ -75,9 +75,7 @@ export function FoodHero() {
         key={currentVideoIndex}
         ref={videoRef}
         src={currentVideo.mp4}
-        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
-          isVideoLoaded ? "opacity-100" : "opacity-0"
-        }`}
+        className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto transition-opacity duration-1000"
         autoPlay
         loop
         muted
@@ -86,15 +84,12 @@ export function FoodHero() {
         disablePictureInPicture
         disableRemotePlayback
         style={{
+          opacity: isVideoLoaded ? 1 : 0,
+          transform: "translate(-50%, -50%) scale(1.1)",
+          WebkitTransform: "translate(-50%, -50%) scale(1.1)",
           objectFit: "cover",
-          objectPosition: "center",
-          minWidth: "100%",
-          minHeight: "100%",
           imageRendering: "-webkit-optimize-contrast",
           WebkitBackfaceVisibility: "hidden",
-          WebkitPerspective: 1000,
-          WebkitTransform: "translate3d(0, 0, 0)",
-          transform: "translate3d(0, 0, 0)",
         }}
       >
         Your browser does not support the video tag.
