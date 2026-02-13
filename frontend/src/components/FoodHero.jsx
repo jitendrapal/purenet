@@ -1,8 +1,10 @@
 // src/components/FoodHero.jsx
 import React, { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "./ui/Button";
 
 export function FoodHero() {
+  const navigate = useNavigate();
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const videoRef = useRef(null);
@@ -116,7 +118,7 @@ export function FoodHero() {
 
         <div className="mt-8 flex flex-wrap items-center gap-4">
           <Button
-            to="/products"
+            onClick={() => navigate("/products")}
             className="group inline-flex items-center gap-2 bg-gradient-to-r from-[#BA5C1E] to-[#D97236] text-sm font-semibold text-white px-8 py-3.5 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:from-[#D97236] hover:to-[#BA5C1E]"
           >
             Explore Products
