@@ -64,7 +64,7 @@ export function FoodHero() {
   };
 
   return (
-    <section className="relative flex h-[70vh] w-full items-stretch justify-center overflow-hidden bg-black sm:h-[80vh] lg:h-[90vh]">
+    <section className="relative flex h-[40vh] w-full items-stretch justify-center overflow-hidden bg-black sm:h-[45vh] lg:h-[50vh]">
       {/* Loading placeholder */}
       {!isVideoLoaded && (
         <div className="absolute inset-0 bg-gradient-to-br from-amber-900 via-amber-800 to-black animate-pulse" />
