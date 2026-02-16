@@ -60,29 +60,27 @@ export default function Cart() {
 
     setStatus("sending");
 
-    // ✅ HTML rows for EmailJS templates
-    const itemsHtml = cart
+    // ✅ Formatted items list for email (plain text with good formatting)
+    const itemsList = cart
       .map(
-        (item) => `
-          <tr>
-            <td>${item.name}</td>
-            <td>${item.qty}</td>
-            <td>€${(item.price * item.qty).toFixed(2)}</td>
-          </tr>
-        `,
+        (item, index) => `
+${index + 1}. ${item.name}
+   Quantity: ${item.qty}
+   Price: €${item.price.toFixed(2)} each
+   Subtotal: €${(item.price * item.qty).toFixed(2)}
+`,
       )
-      .join("");
-
-    // ✅ Plain text summary for Google Sheets
-    const itemsText = cart
-      .map(
-        (item) =>
-          `${item.name} | Qty: ${item.qty} | Subtotal: €${(item.price * item.qty).toFixed(2)}`,
-      )
-      .join(" ; ");
+      .join("\n");
 
     const orderId = `ORD-${Date.now()}`;
     const now = new Date();
+    const orderDate = now.toLocaleDateString("en-NL", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
 
     const baseParams = {
       email: customer.email, // used by EmailJS "To Email: {{email}}"
@@ -92,10 +90,10 @@ export default function Cart() {
       customer_company: customer.company || "Not provided",
       notes: customer.notes || "No notes",
       order_id: orderId,
-      total: total,
+      order_date: orderDate,
+      total: `€${total.toFixed(2)}`,
       year: now.getFullYear(),
-      items: itemsHtml, // for EmailJS table
-      items_text: itemsText, // for Google Sheets row
+      items: itemsList, // formatted plain text list
     };
 
     try {
