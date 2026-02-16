@@ -60,17 +60,27 @@ export default function Cart() {
 
     setStatus("sending");
 
-    // ✅ Formatted items list for email (plain text with good formatting)
-    const itemsList = cart
+    // ✅ Create HTML formatted items table for beautiful email
+    const itemsTableRows = cart
       .map(
         (item, index) => `
-${index + 1}. ${item.name}
-   Quantity: ${item.qty}
-   Price: €${item.price.toFixed(2)} each
-   Subtotal: €${(item.price * item.qty).toFixed(2)}
-`,
+        <tr style="border-bottom: 1px solid #f0f0f0;">
+          <td style="padding: 16px 12px; color: #333; font-size: 14px;">
+            <strong>${index + 1}. ${item.name}</strong>
+          </td>
+          <td style="padding: 16px 12px; color: #666; font-size: 14px; text-align: center;">
+            ${item.qty}
+          </td>
+          <td style="padding: 16px 12px; color: #666; font-size: 14px; text-align: center;">
+            €${item.price.toFixed(2)}
+          </td>
+          <td style="padding: 16px 12px; color: #BA5C1E; font-size: 14px; text-align: right; font-weight: 600;">
+            €${(item.price * item.qty).toFixed(2)}
+          </td>
+        </tr>
+      `,
       )
-      .join("\n");
+      .join("");
 
     const orderId = `ORD-${Date.now()}`;
     const now = new Date();
@@ -91,9 +101,9 @@ ${index + 1}. ${item.name}
       notes: customer.notes || "No notes",
       order_id: orderId,
       order_date: orderDate,
-      total: `€${total.toFixed(2)}`,
+      total: total.toFixed(2),
       year: now.getFullYear(),
-      items: itemsList, // formatted plain text list
+      items_table: itemsTableRows, // HTML table rows for beautiful display
     };
 
     try {

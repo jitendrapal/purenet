@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmation - PureNut</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; background-color: #f9f9f9;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f9f9f9; padding: 40px 20px;">
+    <tr>
+      <td align="center">
+        <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+          
+          <!-- Header -->
+          <tr>
+            <td style="background: linear-gradient(135deg, #BA5C1E 0%, #D97236 100%); padding: 40px 30px; text-align: center;">
+              <h1 style="margin: 0; color: #ffffff; font-size: 32px; font-weight: 700; letter-spacing: 1px;">🌰 PureNut</h1>
+              <p style="margin: 8px 0 0 0; color: #ffffff; font-size: 16px; opacity: 0.95;">Premium Nut Butters from Amstelveen</p>
+            </td>
+          </tr>
+
+          <!-- Success Message -->
+          <tr>
+            <td style="padding: 30px 30px 20px 30px; text-align: center;">
+              <div style="display: inline-block; background-color: #e8f5e9; border-radius: 50%; width: 60px; height: 60px; line-height: 60px; margin-bottom: 15px;">
+                <span style="font-size: 32px;">✓</span>
+              </div>
+              <h2 style="margin: 0 0 10px 0; color: #2e7d32; font-size: 24px; font-weight: 600;">Order Confirmed!</h2>
+              <p style="margin: 0; color: #666; font-size: 15px;">Thank you for your order, <strong>{{customer_name}}</strong></p>
+            </td>
+          </tr>
+
+          <!-- Order Info -->
+          <tr>
+            <td style="padding: 0 30px 20px 30px;">
+              <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #fff8f0; border-radius: 12px; padding: 20px; border-left: 4px solid #BA5C1E;">
+                <tr>
+                  <td>
+                    <p style="margin: 0 0 8px 0; color: #666; font-size: 13px;">Order ID</p>
+                    <p style="margin: 0 0 15px 0; color: #333; font-size: 16px; font-weight: 600;">{{order_id}}</p>
+                    <p style="margin: 0 0 8px 0; color: #666; font-size: 13px;">Order Date</p>
+                    <p style="margin: 0; color: #333; font-size: 14px;">{{order_date}}</p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Order Items -->
+          <tr>
+            <td style="padding: 0 30px 20px 30px;">
+              <h3 style="margin: 0 0 15px 0; color: #333; font-size: 18px; font-weight: 600;">Order Items</h3>
+              <table width="100%" cellpadding="0" cellspacing="0" style="border: 1px solid #f0f0f0; border-radius: 8px; overflow: hidden;">
+                <thead>
+                  <tr style="background-color: #fafafa;">
+                    <th style="padding: 12px; text-align: left; color: #666; font-size: 13px; font-weight: 600; border-bottom: 2px solid #e0e0e0;">Product</th>
+                    <th style="padding: 12px; text-align: center; color: #666; font-size: 13px; font-weight: 600; border-bottom: 2px solid #e0e0e0;">Qty</th>
+                    <th style="padding: 12px; text-align: center; color: #666; font-size: 13px; font-weight: 600; border-bottom: 2px solid #e0e0e0;">Price</th>
+                    <th style="padding: 12px; text-align: right; color: #666; font-size: 13px; font-weight: 600; border-bottom: 2px solid #e0e0e0;">Subtotal</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{items_table}}
+                </tbody>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Total -->
+          <tr>
+            <td style="padding: 0 30px 30px 30px;">
+              <table width="100%" cellpadding="0" cellspacing="0" style="background: linear-gradient(135deg, #BA5C1E 0%, #D97236 100%); border-radius: 12px; padding: 20px;">
+                <tr>
+                  <td style="text-align: right;">
+                    <p style="margin: 0 0 5px 0; color: #ffffff; font-size: 14px; opacity: 0.9;">Total Amount</p>
+                    <p style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700;">€{{total}}</p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Delivery Notes -->
+          <tr>
+            <td style="padding: 0 30px 30px 30px;">
+              <div style="background-color: #f5f5f5; border-radius: 8px; padding: 15px;">
+                <p style="margin: 0 0 5px 0; color: #666; font-size: 13px; font-weight: 600;">Delivery Notes:</p>
+                <p style="margin: 0; color: #333; font-size: 14px;">{{notes}}</p>
+              </div>
+            </td>
+          </tr>
+
+          <!-- Contact Info -->
+          <tr>
+            <td style="padding: 0 30px 30px 30px; text-align: center;">
+              <p style="margin: 0 0 10px 0; color: #666; font-size: 14px;">We'll contact you soon at:</p>
+              <p style="margin: 0 0 5px 0; color: #BA5C1E; font-size: 15px; font-weight: 600;">📧 {{customer_email}}</p>
+              <p style="margin: 0; color: #BA5C1E; font-size: 15px; font-weight: 600;">📱 {{customer_phone}}</p>
+            </td>
+          </tr>
+
+          <!-- Thank You -->
+          <tr>
+            <td style="padding: 0 30px 30px 30px;">
+              <div style="background: linear-gradient(135deg, #fff8f0 0%, #ffe8d6 100%); border-radius: 12px; padding: 25px; text-align: center;">
+                <p style="margin: 0 0 10px 0; color: #BA5C1E; font-size: 18px; font-weight: 600;">Thank you for choosing PureNut! 🌰</p>
+                <p style="margin: 0; color: #666; font-size: 14px;">Premium quality nut butters made with love in Amstelveen, Netherlands</p>
+              </div>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td style="background-color: #fafafa; padding: 25px 30px; text-align: center; border-top: 1px solid #e0e0e0;">
+              <p style="margin: 0 0 10px 0; color: #999; font-size: 12px;">PureNut - Premium Nut Butters</p>
+              <p style="margin: 0 0 10px 0; color: #999; font-size: 12px;">Amstelveen, Netherlands | info@thepurenut.nl</p>
+              <p style="margin: 0; color: #ccc; font-size: 11px;">© {{year}} PureNut. All rights reserved.</p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+
