@@ -113,7 +113,7 @@ export default function Cart() {
         TEMPLATE_ADMIN_ID,
         {
           ...baseParams,
-          email: "sales@purenut.in", // admin receiver
+          email: "info@thepurenut.nl", // admin receiver
         },
         EMAILJS_PUBLIC_KEY,
       );
